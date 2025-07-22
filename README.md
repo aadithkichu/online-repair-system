@@ -54,57 +54,58 @@ The core of this project lies in its relational database design, including:
 
 ---
 
-## ✅ List of Possible Queries (No SQL code)
+## ✅ List of Possible Queries (with Tables Used)
 
 ### 1. User Registration & Authentication
-- Check if a user already exists by email
-- Register a new user
-- Validate login credentials
+- Check if a user already exists by email — `Users`
+- Register a new user — `Users`
+- Validate login credentials — `Users`
 
 ### 2. Worker Profile Setup
-- Create a worker profile
-- Assign services/skills to a worker
-- Retrieve a worker’s full profile and skillset
+- Create a worker profile — `Workers`
+- Assign services/skills to a worker — `Worker_Services`
+- Retrieve a worker’s full profile and skillset — `Workers`, `Worker_Services`, `Services`
 
 ### 3. Job Posting & Listing
-- Post a new repair job
-- List all active/open jobs
-- List all jobs created by a specific customer
+- Post a new repair job — `Job_Posts`
+- List all active/open jobs — `Job_Posts`
+- List all jobs created by a specific customer — `Job_Posts`, `Users`
 
 ### 4. Search & Filter Workers
-- Find available workers by service type and location
+- Find available workers by service type and location — `Workers`, `Worker_Services`, `Services`, `Users`
 
 ### 5. Bidding and Assigning Jobs
-- Place a bid for a job
-- View all bids submitted for a job
-- Accept a bid and mark the job as assigned
+- Place a bid for a job — `Bids`
+- View all bids submitted for a job — `Bids`
+- Accept a bid and mark the job as assigned — `Bids`, `Job_Posts`, `Appointments`
 
 ### 6. Appointments Management
-- Schedule a service appointment
-- View all scheduled appointments for a worker
+- Schedule a service appointment — `Appointments`
+- View all scheduled appointments for a worker — `Appointments`, `Workers`
 
 ### 7. Chat Messaging
-- Send a message related to a job
-- Retrieve full conversation thread for a job
+- Send a message related to a job — `Messages`
+- Retrieve full conversation thread for a job — `Messages`
 
 ### 8. Reviews and Ratings
-- Submit a rating and review after job completion
-- Fetch the average rating of a worker
+- Submit a rating and review after job completion — `Reviews`
+- Fetch the average rating of a worker — `Reviews`, `Workers`
 
 ### 9. Payments
-- Record payment transactions
-- Calculate total earnings of a worker
+- Record payment transactions — `Payment_Transactions`
+- Calculate total earnings of a worker — `Payment_Transactions`
 
 ### 10. Admin Operations
-- View all users and workers
-- Delete or moderate a review
-- Suspend or deactivate a worker account
+- View all users and workers — `Users`, `Workers`
+- Delete or moderate a review — `Reviews`
+- Suspend or deactivate a worker account — `Users`, `Workers`
 
 ### 11. Views & Dashboard Queries
-- View active job listings
-- View top-rated workers
+- View active job listings — `Job_Posts`
+- View top-rated workers — `Workers`, `Reviews`
 
 ---
+
 
 ## 🔁 Possible Stored Procedures
 
